@@ -12,11 +12,13 @@ def view_image(image, name_of_window):
     cv2.destroyAllWindows()
 
 
-def clean_up_image(image, view_steps = False):
+def clean_up_image(image, use_preprocessing = True, view_steps = False):
     """
     This function will clean up background of the image via OpenCV
     """
     preprocesses = ["thresh", "blur"]
+    if not use_preprocessing:
+        preprocesses = []
 
     # convert image to shades of gray
     input_image = cv2.imread(image) # load image as BGR, not RGB
@@ -35,11 +37,11 @@ def clean_up_image(image, view_steps = False):
         # median blur to remove noise
         elif preprocess == "blur":
             gray_image = cv2.medianBlur(gray_image, 3)
-    if view_steps:
+    if view_steps and use_preprocessing:
         view_image(gray_image, "Preprocess image")
 
     # save the temporary picture with preprocess so that you can apply OCR to it
-    filename = "tmp/output/{}.png".format(os.getpid())
+    filename = "tmp/{}.png".format(os.getpid())
     cv2.imwrite(filename, gray_image)
     return filename
 

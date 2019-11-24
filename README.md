@@ -12,7 +12,8 @@ To run this project you need to execute some commands
 1. Install Tesseract locally:
 - ```sudo apt update```
 - ```sudo apt install tesseract-ocr```
-- ```sudo apt install libtesseract-dev```
+- ```sudo apt install tesseract-ocr-eng```
+- ```sudo apt install tesseract-ocr-rus```
 
 2. Setup Virtual Environment:
 - ```pip3 install virtualenv```

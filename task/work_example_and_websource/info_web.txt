@@ -1,6 +1,0 @@
-Основное:
-https://github.com/tesseract-ocr/tesseract/wiki#installation // from shell
-https://github.com/madmaze/pytesseract#usage // from python
-
-Дополнительно:
-https://ru.stackoverflow.com/questions/843078/Улучшение-распознавания-pytesseract
